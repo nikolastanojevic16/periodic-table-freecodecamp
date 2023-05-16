@@ -4,7 +4,7 @@ PSQL="psql --username=freecodecamp --dbname=periodic_table -t --tuples-only -c"
 
 if [[ -z $1 ]]
 then
-  echo -e "\nPlease provide an element as an argument."
+  echo -e "Please provide an element as an argument."
   exit
 fi
 
@@ -20,7 +20,7 @@ fi
 
 if [[ -z $NUMBER ]]
 then
-  echo -e "\nI could not find that element in the database."
+  echo -e "I could not find that element in the database."
   exit
 fi
 
@@ -39,4 +39,4 @@ M_POINT=$(echo $M_POINT | sed 's/ //g')
 B_POINT=$(echo $B_POINT | sed 's/ //g')
 NAME=$(echo $NAME | sed 's/ //g')
 
-echo -e "\nThe element with atomic number $NUMBER is $NAME ($SYMBOL). It's a $TYPE, with a mass of $MASS amu. $NAME has a melting point of $M_POINT celsius and a boiling point of $B_POINT celsius."
+echo -e "The element with atomic number $NUMBER is $NAME ($SYMBOL). It's a $TYPE, with a mass of $MASS amu. $NAME has a melting point of $M_POINT celsius and a boiling point of $B_POINT celsius."
