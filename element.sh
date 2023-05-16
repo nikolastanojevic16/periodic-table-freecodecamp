@@ -12,7 +12,7 @@ fi
 #first if checks if input is number
 if [[ $1 =~ ^[1-9]+$ ]]
 then
-  NUMBER=$($PSQL "select atomic_number from elements join properties using(atomic_number) join types using(type_id) where atomic_number = '$1'")
+  NUMBER=$($PSQL "select atomic_number from elements where atomic_number = '$1'")
 else
 #if argument is string
   NUMBER=$($PSQL "select atomic_number from elements join properties using(atomic_number) join types using(type_id) where name = '$1' or symbol = '$1'")
